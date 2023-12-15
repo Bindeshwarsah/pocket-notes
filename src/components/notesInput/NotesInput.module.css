@@ -1,0 +1,55 @@
+.notesInputContainer {
+  position: fixed;
+  bottom: 0rem;
+  right: 0rem;
+  width: 71.5vw;
+  min-height: 20vh;
+  background-color: #001f8b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.notesTextArea {
+  width: 100%;
+  min-height: 18vh;
+  padding: 6px 80px 6px 20px;
+  resize: none;
+  font-size: 1.2rem;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.03725rem;
+  border-radius: 0.5625rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  outline: none;
+}
+.sendBtn {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  border: "none";
+  border-radius: 4px;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+@media screen and (max-width: 500px) {
+  .notesInputContainer {
+    width: 100vw;
+  }
+  .notesTextArea {
+    font-size: 1rem;
+  }
+}

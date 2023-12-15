@@ -1,0 +1,72 @@
+.contentContainer {
+  width: 75vw;
+  height: 100vh;
+  overflow: hidden;
+  border-radius: 0rem 0rem 0rem 0.9375rem;
+  background-color: #dae5f5;
+}
+
+.navBar {
+  min-height: 4rem;
+  background-color: #001f8b;
+  display: flex;
+  align-items: center;
+}
+
+.groupInfo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.initial,
+.groupName {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+}
+.initialBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5.5rem;
+  height: 5rem;
+}
+.initial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 3.5rem;
+  margin-left: 2rem;
+  line-height: 97.688%;
+}
+.groupName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: normal;
+}
+
+.backIcon {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .contentContainer {
+    width: 100vw;
+    height: 100vh;
+  }
+  .backIcon {
+    display: inline-block;
+    margin-left: 1rem;
+    width: 1.6rem;
+  }
+  .initial {
+    margin-left: 0rem;
+  }
+}

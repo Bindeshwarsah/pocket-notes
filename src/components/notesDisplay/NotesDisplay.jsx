@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./NotesDisplay.module.css";
+import { format } from "date-fns";
 
 const NotesDisplay = ({ messages }) => {
   return (
@@ -8,21 +9,10 @@ const NotesDisplay = ({ messages }) => {
         <div key={index} className={styles.messageContainer}>
           <div className={styles.content}>{message.content}</div>
           <div className={styles.dateTime}>
-            {new Date(message.timestamp)
-              .toLocaleDateString("en-US", {
-                day: "numeric",
-                month: "short",
-                year: "numeric",
-              })
-              .replace(/,/, "")
-              .replace(/(\d+) (\w+) (\d+)/, "$2 $1 $3")}
+            {format(new Date(message.timestamp), "dd MMM yyyy")}
             &nbsp; &nbsp; <span className={styles.bullet}> &bull; </span>&nbsp;
             &nbsp;
-            {new Date(message.timestamp).toLocaleTimeString("en-US", {
-              hour: "numeric",
-              minute: "numeric",
-              hour12: true,
-            })}
+            {format(new Date(message.timestamp), "h:mm a")}
           </div>
         </div>
       ))}

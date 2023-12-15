@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import ColorOption from "../popupColorOptions/ColorOption";
 import styles from "./Popup.module.css";
 
@@ -15,6 +17,18 @@ const Popup = ({ isOpen, onClose, onGroupCreate }) => {
   };
 
   const handleCreateGroup = () => {
+    // Check if group name is entered
+    if (!groupData.name) {
+      toast.error("Enter group name");
+      return;
+    }
+
+    // Check if color is selected
+    if (!groupData.color) {
+      toast.error("Select color");
+      return;
+    }
+
     // Close the popup and reset data
     onClose();
 
@@ -22,17 +36,6 @@ const Popup = ({ isOpen, onClose, onGroupCreate }) => {
     onGroupCreate(groupData);
 
     setGroupData({ name: "", color: "" });
-  };
-
-  const handleBodyScroll = () => {
-    // Disable body scroll when the popup is open
-    document.body.style.overflow = isOpen ? "hidden" : "auto";
-  };
-
-  const handleClickOutside = (event) => {
-    if (popupRef.current && !popupRef.current.contains(event.target)) {
-      onClose();
-    }
   };
 
   useEffect(() => {
@@ -66,6 +69,7 @@ const Popup = ({ isOpen, onClose, onGroupCreate }) => {
         ref={popupRef}
       >
         <>
+          <ToastContainer />
           <h2 className={styles.title}>Create New group</h2>
           <div className={styles.grpNameSection}>
             <p className={styles.grpName}>Group Name</p>
@@ -109,11 +113,7 @@ const Popup = ({ isOpen, onClose, onGroupCreate }) => {
             </div>
           </div>
 
-          <button
-            onClick={handleCreateGroup}
-            disabled={!groupData.name || !groupData.color}
-            className={styles.createGrpBtn}
-          >
+          <button onClick={handleCreateGroup} className={styles.createGrpBtn}>
             Create Group
           </button>
         </>

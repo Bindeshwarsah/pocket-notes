@@ -25,7 +25,9 @@ const GroupList = ({ setActiveGroup, activeGroup, handleGroupClick }) => {
 
   const handleGroupCreate = (newGroup) => {
     const isGroupExist = groups.some(
-      (group) => group.name === newGroup.name && group.color !== newGroup.color
+      (group) =>
+        (group.name === newGroup.name && group.color === newGroup.color) ||
+        (group.name === newGroup.name && group.color !== newGroup.color)
     );
 
     if (isGroupExist) {
@@ -50,7 +52,6 @@ const GroupList = ({ setActiveGroup, activeGroup, handleGroupClick }) => {
 
     localStorage.setItem("groups", JSON.stringify(updatedGroups));
   };
-
   return (
     <div className={styles.groupListContainer}>
       <div className={styles.groupList}>
@@ -76,6 +77,7 @@ const GroupList = ({ setActiveGroup, activeGroup, handleGroupClick }) => {
           isOpen={isPopupOpen}
           onClose={handleClosePopup}
           onGroupCreate={handleGroupCreate}
+          groups={groups}
         />
       )}
       <ToastContainer />

@@ -1,0 +1,52 @@
+.desktopHome {
+  width: 75vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #dae5f5;
+  overflow: hidden;
+}
+.homeImage {
+  width: 35vw;
+  height: 35vh;
+}
+.lock {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.heading {
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.0625rem;
+}
+.homePara {
+  color: #292929;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2rem; /* 145.455% */
+  letter-spacing: 0.0275rem;
+}
+.encryptMessage {
+  color: #292929;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem; /* 145.455% */
+  letter-spacing: 0.0275rem;
+}
+.homeLock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 18vh;
+  gap: 0.5rem;
+}
